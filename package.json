@@ -1,0 +1,22 @@
+{
+  "name": "node_101",
+  "version": "1.0.0",
+  "description": "primeira pratica com node",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon"
+  },
+  "author": "Isaac na Gama",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql2": "^3.4.0",
+    "sequelize": "^6.32.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22",
+    "sequelize-cli": "^6.6.1",
+    "sucrase": "^3.32.0"
+  }
+}
