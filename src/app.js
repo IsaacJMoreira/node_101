@@ -1,6 +1,6 @@
 //⚠ cuidado quando usar esse tipo de iport. usar o sucrase
 const express = require('express');
-const routes = requite('./routes');
+const routes = require('./routes');
 const app = express();
 
 app.use(routes);
