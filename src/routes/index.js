@@ -2,8 +2,9 @@ const express = require('express');
 const routes = express.Router();
 
 ///////////////////////////////////////////////////////////
-const BD = [];
-routes.use(express.json());
+
+const BD = [];//fake databank
+routes.use(express.json());//allows the server to uses JSON encoding
 
 //////////////////////////////////////////////////////////
 /*                     GET ROUTES                       */
@@ -49,9 +50,7 @@ routes.post('/register', (req, res)=>{
          BD.push(register);
     console.log(req.body);
     res.send("Pronto");
-})
-
-
+});
 
 //////////////////////////////////////////////////////////
 /*        THE MODULE MUST BE EXPORTED AT THE END        */

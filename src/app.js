@@ -2,7 +2,21 @@
 const express = require('express');//includes the express functionality
 const routes = require('./routes');//import the routes from the  /routes directory
 const app = express();
+const port = 3000;
 
 app.use(routes);//uses the routes imported from the /routes directory
 
-app.listen(3000, ()=> console.log("🔥🔥🔥 TÔ RODANDO!!! 🔥🔥🔥"));//logs the success on the screen
+
+/////////////////////////////////////////////////////////////////
+/*                 START THE SERVER WE CREATED                 */
+/////////////////////////////////////////////////////////////////
+
+// OK, this method has a bunch os parameters, but for sinplicitys sake, 
+// we only give it the port it must listen to, the IP and olther para-
+// meters are given by default.
+// Basicaly we order the app class to listen to the port 3000.
+// We specified the routes inside the /routes/index.js file this app.js
+// appear cleaner. The callback function that we pass to it is only a 
+// log, but we could and probaby should do more.
+
+app.listen(port, ()=> console.log("🔥🔥🔥 TÔ RODANDO!!! 🔥🔥🔥"));
