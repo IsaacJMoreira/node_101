@@ -1,12 +1,12 @@
 module.exports = {
-    dialect: 'mysql',
-    host:    'localhost',
-    username:'root',
-    password:'1234',
-    database:'nodeApi',
-    define: {
-        timestamps: true, 
-        underscored: true,
-        underscoredAll:true,
-    }
-}
+	dialect: 'mysql',
+	host: '127.0.0.1',
+	username: 'root',
+	password: '1234',
+	database: 'nodeapi',
+		define: {
+			timestamps: true, 
+			underscored: true,
+			underscoredAll:true,
+	},
+};

@@ -1,5 +1,9 @@
-import{ Router } from 'express'; // import the routs and http ver🚏 
+import { Router } from 'express';
+import UserController from './app/controllers/UserController';
+import './database'//since its importing a index named file...
 
-const routes = new Router();// instantites a new function from 'express' 😰 
+const routes = new Router()
 
-export default routes;
+routes.post('/users', UserController.store)
+
+export default routes
