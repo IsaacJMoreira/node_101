@@ -1,22 +1,28 @@
+const Produtos = require('../models/Produtos.js');
+
+
+
 const produtoController = {
-    listarProdutos: (req, res) => {
+    listarProdutos: async (req, res) => {
 
-        const dummyResponse = [
-            {
-                "nome": "produto 1"
-            },
-            {
-                "nome": "produto 2"
-            }
-        ]
+        const listaDeProdutos = await Produtos.findAll();
 
-        res.json(dummyResponse)
-        console.log("A GET request was successfully fulfilled. Returned Data: " + dummyResponse);
+        res.json(listaDeProdutos);
+
+        console.log("A GET request was successfully fulfilled.");
     },//NOTE ESSS SINTAXE! Separamos os métodos escritos como objetos com virgulas
 
-    cadastrarProduto: (req, res) => {
-        console.log("POST resquest fulfilled. Created a new user. Data received: "+ req.body);
-        res.json("Produto Cadastrado!");        
+    cadastrarProduto: async (req, res) => {
+        const {nome, preco, quantidade} = req.body;
+
+        const novoProduto = await Produtos.create({
+            nome, 
+            preco, 
+            quantidade
+        });
+
+        console.log("POST resquest fulfilled. A new product was inserted into database.");
+        res.json(novoProduto);        
     }
 }
 

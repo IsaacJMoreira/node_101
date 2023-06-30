@@ -11,14 +11,14 @@ routes.use(express.json());//allows the server to uses JSON encoding
 /*                     GET ROUTES                       */
 //////////////////////////////////////////////////////////
 
-
 routes.get('/produto/lista', produtoController.listarProdutos );
 
 //////////////////////////////////////////////////////////
 /*                     POST ROUTES                      */
 //////////////////////////////////////////////////////////
 
-routes.post('/produto', produtoController.cadastrarProduto);
+routes.post('/produto/criar', produtoController.cadastrarProduto);
+
 //////////////////////////////////////////////////////////
 /*        THE MODULE MUST BE EXPORTED AT THE END        */
 //////////////////////////////////////////////////////////
