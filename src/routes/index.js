@@ -20,6 +20,18 @@ routes.get('/produto/lista', produtoController.listarProdutos );
 routes.post('/produto/criar', produtoController.cadastrarProduto);
 
 //////////////////////////////////////////////////////////
+/*                    DELETE ROUTES                     */
+//////////////////////////////////////////////////////////
+
+routes.delete('/produto/:id/deletar', produtoController.deletarProduto);
+
+//////////////////////////////////////////////////////////
+/*                      PUT ROUTES                      */
+//////////////////////////////////////////////////////////
+
+routes.put('/produto/:id/atualizar', produtoController.atualizarProduto);
+
+//////////////////////////////////////////////////////////
 /*        THE MODULE MUST BE EXPORTED AT THE END        */
 //////////////////////////////////////////////////////////
 module.exports = routes;
