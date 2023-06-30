@@ -1,8 +1,11 @@
 //⚠ cuidado quando usar esse tipo de iport. usar o sucrase
 const express = require('express');//includes the express functionality
 const routes = require('./routes');//import the routes from the  /routes directory
+const db = require('./database');
 const app = express();
 const port = 3000;
+
+db.hasConnection();
 
 app.use(routes);//uses the routes imported from the /routes directory
 
