@@ -1,5 +1,7 @@
 const express = require('express');
 const produtoController = require( "../controllers/produtoController.js");
+const requestLog = require('../middlewares/requestLog.js');
+const bloqueio = require('../middlewares/bloqueio.js');
 const routes = express.Router();
 
 
@@ -11,7 +13,7 @@ routes.use(express.json());//allows the server to uses JSON encoding
 /*                     GET ROUTES                       */
 //////////////////////////////////////////////////////////
 
-routes.get('/produto/lista', produtoController.listarProdutos );
+routes.get('/produto/lista', requestLog, bloqueio, produtoController.listarProdutos );
 
 //////////////////////////////////////////////////////////
 /*                     POST ROUTES                      */
