@@ -1,4 +1,4 @@
-const Produtos = require('../models/Produtos.js');
+const { Produtos } = require('../models');
 
 
 
@@ -13,12 +13,13 @@ const produtoController = {
     },//NOTE ESSS SINTAXE! Separamos os métodos escritos como objetos com virgulas
 
     cadastrarProduto: async (req, res) => {
-        const {nome, preco, quantidade} = req.body;
+        const {nome, preco, quantidade, id_fabricante} = req.body;
 
         const novoProduto = await Produtos.create({
             nome, 
             preco, 
-            quantidade
+            quantidade, 
+            id_fabricante
         });
 
         console.log("POST resquest fulfilled. A new product was inserted into database.");
